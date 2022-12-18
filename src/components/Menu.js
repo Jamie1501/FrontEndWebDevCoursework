@@ -14,10 +14,10 @@ export default function Menu() {
         });
         setMenu(updatedMenu);
     };
-    //sets shopping list
+    //creates shopping list
     const [selectedIngs, setSelectedIng] = useState([]);
     const shopping = (e, selectedIng) => {
-        // Checks if shopping list item exists, adds if doesnt
+        // Checks if shopping list item exists and if it doesnt it will be added
         const found = selectedIngs.some(el => el === selectedIng);
         if (!found) {
             let shoppingstate = [...selectedIngs, selectedIng];

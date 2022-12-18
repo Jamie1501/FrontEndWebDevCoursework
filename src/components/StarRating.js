@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const StarRating = () => {
+  //creates a basic star rating system which allows users to give each individual recipe a rating between 1-5 stars
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);
     return (

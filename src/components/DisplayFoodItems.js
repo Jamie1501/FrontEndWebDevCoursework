@@ -10,7 +10,7 @@ const DisplayFoodItems = ({ foodList }) => {
   const [selectedItems, setSelectedItems] = useState([]);
   const menu = (e, selectedItem) => {
     setSearchField(selectedItem.ingredients)
-    //Checks if menu item exists, adds if doesnt
+    //Checks to make sure the menu exists and if it doesnt makes it
     const found = selectedItems.some(el => el.name === selectedItem.name);
     if (!found) {
       let newState = [...selectedItems, selectedItem];
@@ -20,11 +20,12 @@ const DisplayFoodItems = ({ foodList }) => {
       alert("Item is already on the menu!")
     }
   };
-  //gets ingredients to send to api
+  //sends the ingredients to the apo
   const [searchField, setSearchField] = useState("");
   const nutrient = (e, selectedItem) => {
     setSearchField(selectedItem.ingredients)
   };
+  //using the accordions to lay out the 
   return (
     <>
       <Accordion class="accordion">

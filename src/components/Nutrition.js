@@ -3,6 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Nutrition = ({ item }) => {
+  //how the nutrition will be displayed
   return (
     <div className="submenu">
      <h3>Food : {item.name}</h3>

@@ -3,6 +3,7 @@ import DisplayFoodItems from "./DisplayFoodItems";
 import { ingredLists } from "../data/Ingredients";
 
 function Search({ details }) {
+  //creates the filtered variable to check if anythings been added into the search bar
   const [ingredients, setIngredients] = useState([]);
   const [searchField, setSearchField] = useState("");
   const filtered = details.filter((entry) => {
@@ -25,6 +26,7 @@ function Search({ details }) {
       )
     }
   });
+  //displays the filter and search area to allow users to interact and search for specific items
   return (
     <div>
       <h2 className="centered">Filter & Seacrh</h2>

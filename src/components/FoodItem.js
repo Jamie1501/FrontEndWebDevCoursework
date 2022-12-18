@@ -3,6 +3,7 @@ import Accordion from "react-bootstrap/Accordion";
 import StarRating from "./StarRating";
 
 const FoodItem = ({ food }) => {
+  //how the food item will be displayed in each accordion
   return (
     <div id="recipes">
       <Accordion.Header>{food.name}</Accordion.Header>

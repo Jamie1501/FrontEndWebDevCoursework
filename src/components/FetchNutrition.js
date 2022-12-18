@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import Nutrition from "./Nutrition";
 import BarChart from "./NutritionChart";
 
-
+//begining on feltching the data from the api
 const FetchData = ({ query }) => {
   const [nutrition, setNutrition] = useState({
     sugar_g: 0,
@@ -18,6 +18,7 @@ const FetchData = ({ query }) => {
     protein_g: 0,
     carbohydrates_total_g: 0,
   });
+  //setting the base data and labels for the chart
   const [chartData, setChartData] = useState({
     labels: ["sugar", "fiber","saturated fat","total fat","protein", "cholesterol", "sodium", "potassium"],
     datasets: [
@@ -30,7 +31,7 @@ const FetchData = ({ query }) => {
   
 });
 
-
+//fetching the api
   const fetchData = useCallback(() => {
     const url =
       "https://calorieninjas.p.rapidapi.com/v1/nutrition?query=" + query;
@@ -42,6 +43,7 @@ const FetchData = ({ query }) => {
         "X-RapidAPI-Host": "calorieninjas.p.rapidapi.com",
       },
     };
+    //filtering the data
     fetch(url, options)
       .then((response) => response.json())
       .then((incomingData) => {
@@ -68,6 +70,7 @@ const FetchData = ({ query }) => {
             "sodium",
             "potassium"
           ];
+          //sets the data of the chart and the colours 
           setChartData({
             labels: filteredLabels,
             datasets: [

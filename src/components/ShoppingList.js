@@ -15,7 +15,8 @@ export default function Shoppinglist() {
     let updatedShopping = []
     setList(updatedShopping);
   };
-  //seperates each ingredient onto new line
+  
+  //seperates each ingredient onto new line to look like a shopping list check off list
   let ing = [...list].flat(1);
   return (
     <div>
